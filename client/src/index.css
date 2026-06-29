@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-slate-700;
+  }
+
+  body {
+    @apply min-h-screen font-body;
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-surface backdrop-blur-xl border border-white/10 rounded-2xl shadow-xl;
+  }
+
+  .glass-card {
+    @apply bg-surface-card backdrop-blur-md border border-white/10 rounded-xl;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl
+           transition-all duration-200 hover:scale-105 active:scale-95 shadow-lg shadow-indigo-500/25
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl
+           transition-all duration-200 border border-white/10
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-uno {
+    @apply px-8 py-4 bg-red-600 hover:bg-red-500 text-white font-bold text-xl rounded-2xl
+           transition-all duration-200 hover:scale-110 active:scale-95 shadow-lg shadow-red-500/40
+           animate-pulse;
+  }
+}
+
+/* Color blind patterns */
+.colorblind .card-red { background-image: repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(0,0,0,0.2) 4px, rgba(0,0,0,0.2) 8px); }
+.colorblind .card-blue { background-image: repeating-linear-gradient(90deg, transparent, transparent 4px, rgba(0,0,0,0.2) 4px, rgba(0,0,0,0.2) 8px); }
+.colorblind .card-green { background-image: repeating-linear-gradient(135deg, transparent, transparent 4px, rgba(0,0,0,0.2) 4px, rgba(0,0,0,0.2) 8px); }
+.colorblind .card-yellow { background-image: repeating-linear-gradient(0deg, transparent, transparent 4px, rgba(0,0,0,0.2) 4px, rgba(0,0,0,0.2) 8px); }
+
+/* High contrast */
+.high-contrast .glass { @apply bg-black border-white; }
+.high-contrast .btn-primary { @apply bg-white text-black; }
+
+/* Font sizes */
+.font-small { font-size: 0.875rem; }
+.font-medium { font-size: 1rem; }
+.font-large { font-size: 1.125rem; }
